@@ -1,0 +1,55 @@
+/* FORM */
+
+.form {
+  padding: 1rem;
+  border: 1px solid rgb(206, 206, 206);
+  display: inline-block;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+
+.form__input {
+  margin-bottom: 1rem;
+}
+
+.form__input label {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form__input .input {
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  border: 1px solid rgb(185, 184, 184);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  background-color: white;
+}
+
+.form__input .input.error-input {
+  border-color: red;
+}
+
+.form__input .input:not(.error-input):focus {
+  border-color: rgb(59, 105, 231);
+}
+
+.form .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form__input .error {
+  color: red;
+  font-size: 1.2rem;
+}
+
+.spending__form {
+  width: 40%;
+}

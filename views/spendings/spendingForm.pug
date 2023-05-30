@@ -1,0 +1,43 @@
+extends ../layout.pug
+
+block style 
+    link(rel="stylesheet", href="/style/form.css")
+
+block content 
+    section.section.container
+        h2.title #{spending.id ? 'Update' : 'Create'} spending
+
+        form(action="/spendings/form",method="POST").form.spending__form
+            input(type="hidden", name="id",value=spending.id)
+
+            .form__input
+                label(for="name") Name
+                input(type="text", name="name",value=spending.name)#name.input
+
+            .form__input 
+                label(for="category") Category 
+                select(name="category",value=spending.category)#category.input
+                    each category of categories
+                        option(value=category.id) #{category.name}
+
+            .form__input
+                label(for="amount") Amount
+                input(type="number", name="amount",value=spending.amount)#amount.input
+
+            .form__input
+                label(for="date") Date
+                input(type="date", name="date", placeholder="dd-mm-yyyy", min="1997-01-01", max="2030-12-31", value=spending.date)#date.input
+
+            .form__input
+                label(for="description") Description
+                textarea(type="text", name="description",value=spending.name)#description.input
+
+            .actions
+                a(href="/spendings").block
+                    button(type="button").cancel-btn.btn  Cancel
+                button(type="submit").save-btn.btn Save
+
+    if errors
+        script(src="/js/ErrorManager.js")
+        script.
+            (new ErrorManager("#{errors}")).manage() 

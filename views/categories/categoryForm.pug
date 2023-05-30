@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block style 
+    link(rel="stylesheet", href="/style/form.css")
+
+block content 
+    section.section.container
+        h2.title #{category.id ? 'Update' : 'Create'} category
+
+        form(action="/categories/form",method="POST").form
+            input(type="hidden", name="id", value=category.id)
+
+            .form__input
+                input(type="text", name="name", placeholder="Name...", value=category.name)#name.input
+            .actions
+                a(href="/categories").block
+                    button(type="button").cancel-btn.btn  Cancel
+                button(type="submit").save-btn.btn Save
+
+    if errors
+        script(src="/js/ErrorManager.js")
+        script.
+            (new ErrorManager("#{errors}")).manage() 
+             
+            

@@ -1,0 +1,29 @@
+extends ../layout.pug
+
+block content 
+    section.container.section
+        if saved
+            .success Category has been saved successfully!
+        if deleted
+            .success Category has been deleted successfully!
+        div.flex.justify-between
+            h2.title Categories
+            a(href="/categories/create")
+                button.create-btn.btn New 
+
+        table 
+            thead 
+                tr 
+                    th Name
+                    th.actions 
+
+            tbody 
+                each category of categories
+                    tr 
+                        td #{category.name}
+                        td
+                            .actions
+                                a(href="/categories/" + category.id + "/edit")
+                                    button.btn.edit-btn Edit 
+                                form(action="/categories/"+category.id + '/delete' , method="post") 
+                                    button.btn.delete-btn Delete

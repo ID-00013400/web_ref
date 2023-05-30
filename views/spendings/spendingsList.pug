@@ -1,0 +1,38 @@
+extends ../layout.pug
+
+block content 
+    section.container.section
+        if saved
+            .success Spending has been saved successfully !
+        if deleted
+            .success Spending has been deleted successfully !
+            
+        div.flex.justify-between
+            h2.title Spendings
+            a(href="/spendings/create")
+                button.create-btn.btn New 
+
+        table 
+            thead 
+                tr 
+                    th Name
+                    th Category 
+                    th Amount 
+                    th Date 
+                    th Description
+                    th.actions 
+
+            tbody 
+                each spending of spendings
+                    tr 
+                        td #{spending.name}
+                        td #{spending.category}
+                        td #{spending.amount}
+                        td #{spending.date}
+                        td #{spending.description}
+                        td
+                            .actions
+                                a(href="/spendings/" + spending.id + "/edit")
+                                    button.btn.edit-btn Edit 
+                                form(action="/spendings/"+spending.id + '/delete' , method="post") 
+                                    button.btn.delete-btn Delete

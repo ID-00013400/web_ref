@@ -1,0 +1,28 @@
+{
+  "name": "00014511",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/00014511student/web_technology.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/00014511student/web_technology/issues"
+  },
+  "homepage": "https://github.com/00014511student/web_technology#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-validator": "^6.15.0",
+    "nodemon": "^2.0.22",
+    "pug": "^3.0.2",
+    "uniqid": "^5.4.0"
+  }
+}

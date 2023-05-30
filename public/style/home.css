@@ -1,0 +1,16 @@
+.home {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.home__title {
+  font-size: 5rem;
+}
+
+.home__subtitle {
+  font-size: 2rem;
+}
